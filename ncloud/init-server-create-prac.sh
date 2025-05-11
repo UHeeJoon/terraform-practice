@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 dnf -y update
 
@@ -10,6 +10,9 @@ curl -fsSL "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraf
 unzip terraform.zip
 mv -f terraform /usr/local/bin/
 rm -f terraform.zip
+
+hash -r
+sleep 60
 
 # terraform worker folder
 mkdir terraform-infra
